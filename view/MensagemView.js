@@ -6,7 +6,7 @@ class MensagemView{
     _template(erros){
         return `
             <span>
-                ${erros.map((erro)=>erro)}
+                ${erros.map((erro)=>erro).join('</br>')}
             </span>
         `;
     }

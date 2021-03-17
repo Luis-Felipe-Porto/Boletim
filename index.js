@@ -14,6 +14,7 @@ const alunoController = new AlunoControler(campos);
         campos.nome.value,
         [parseInt(campos.nota1.value),parseInt(campos.nota2.value)],
         parseInt(campos.frequencia.value),
+        campos.provafinal.value.trim() !== ''?parseInt(campos.provafinal.value): null
         );
     alunoController.adicionaAluno(aluno);
 })

@@ -11,6 +11,7 @@ class AlunoView{
             <th>Nota 2</th>
             <th>Frequência</th>
             <th>Final</th>
+            <th>Situação</th>
             
         </thead>
         <tbody>
@@ -20,9 +21,9 @@ class AlunoView{
                     <td>${aluno.notas[0]}</td>
                     <td>${aluno.notas[1]}</td>
                     <td>${aluno.frequencia+' %'}</td>
-                    <td>${aluno.provafinal}</td>
-                    <td><a>Excluir</a></td>
-                    <td>Editar</td>
+                    <td>${aluno.provafinal == null?'--':aluno.provafinal}</td>
+                    <td>${aluno.situacao}</td>
+                   
                 </tr>
             `
             ).join('')}
