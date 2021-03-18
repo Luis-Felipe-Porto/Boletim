@@ -5,15 +5,18 @@ class AlunoControler{
         this._alunoView = new AlunoView($('#js-alunoView'));
         this._boletim = new Boletim();
         this._mensagemView = new MensagemView($('#mensagem'));
+        
     }
-
     adicionaAluno(aluno){
         const erros = this._validacao(aluno);
-        (erros.length<=0)?
-        this._boletim.adicionaAluno(aluno)
-        :this._mensagemView.update(erros);  
+        if(erros.length<=0){
+            aluno.situacao = this.situacao(aluno);
+            this._boletim.adicionaAluno(aluno)
+           // console.log(this._calcularMediaGeralTurma());
+        }else{
+            this._mensagemView.update(erros); 
+        }
         this.limpaFormulario();
-        aluno.situacao = this.situacao(aluno);
         
         if( aluno.situacao == 'PROVA FINAL'){
             aluno.situacao = calcularNotaFinal(aluno)
@@ -21,26 +24,26 @@ class AlunoControler{
         this._alunoView.update(this._boletim);    
     }
     situacao(aluno){
-
         const media = this._calcularMedia(aluno);
         if(media>=70) return 'APROVADO'
         if(media<=30 || aluno.frequencia <= 70) return 'REPROVADO'
         if(media<=70 && media>=30) return 'PROVA FINAL'
-
     }
     _calcularMedia(aluno){
         let soma = 0;
         aluno.notas.forEach((nota)=>{
              soma += nota;
         })
-        return (soma / aluno.notas.length);
+        aluno.media = (soma / aluno.notas.length);
+        return aluno.media;
     }
     _calcularMediaFinal(aluno){
         let soma = 0;
         aluno.notas.forEach((nota)=>{
              soma += nota;
         })
-        return ((soma + aluno.provafinal) / aluno.notas.length + 1);
+        aluno.media = ((soma + aluno.provafinal) / aluno.notas.length + 1);
+        return aluno.media;
     }
     calcularNotaFinal(aluno){
        return _calcularMedia(aluno) + _calcularMediaFinal(aluno) < 50 ? 'REPROVADO': 'APROVADO'

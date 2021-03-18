@@ -6,6 +6,7 @@ class Aluno{
         this._frequencia =frequencia;
         this._provafinal = provafinal;
         this._situacao;
+        this._media;
         //Object.freeze(this);
     }
     get nome(){
@@ -25,6 +26,12 @@ class Aluno{
     }
     set situacao(value){
         this._situacao = value;
+    }
+    get media(){
+        return this._media;
+    }
+    set media(m){
+        this._media = m;
     }
     
 

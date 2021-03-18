@@ -11,6 +11,7 @@ class AlunoView{
             <th>Nota 2</th>
             <th>Frequência</th>
             <th>Final</th>
+            <th>Media</th>
             <th>Situação</th>
             
         </thead>
@@ -22,6 +23,7 @@ class AlunoView{
                     <td>${aluno.notas[1]}</td>
                     <td>${aluno.frequencia+' %'}</td>
                     <td>${aluno.provafinal == null?'--':aluno.provafinal}</td>
+                    <td>${aluno.media}</td>
                     <td>${aluno.situacao}</td>
                    
                 </tr>
@@ -29,6 +31,17 @@ class AlunoView{
             ).join('')}
            
         </tbody>
+        <tfooter>
+
+            <tr>
+                <td>Aprovados</td>
+                <td>${boletim.numeroAprovados()}</td>
+                <td>Reprovados</td>
+                <td>${boletim.numeroReprovados()}</td>
+                <td>Media Geral</td>
+                <td>${boletim.calcularMediaGeralTurma().toFixed(2)}</td>
+            </tr> 
+        </tfooter>
     </table>`;
     }
     update(boletim){

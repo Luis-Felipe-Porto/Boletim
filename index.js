@@ -7,8 +7,8 @@ let campos  = {
 }
 
 const alunoController = new AlunoControler(campos);
- document.querySelector('#cadastro-aluno').addEventListener('submit',function(event){
-     event.preventDefault();
+    document.querySelector('#cadastro-aluno').addEventListener('submit',function(event){
+    event.preventDefault();
     
     const aluno = new Aluno(
         campos.nome.value,
@@ -17,4 +17,10 @@ const alunoController = new AlunoControler(campos);
         campos.provafinal.value.trim() !== ''?parseInt(campos.provafinal.value): null
         );
     alunoController.adicionaAluno(aluno);
+    // const tbody = document.querySelector('#js-alunoView table')  
+    // const tr = document.createElement('tr');
+    // const nAprovados = document.createElement('td');
+    // const nReprovados = document.createElement('td');
+     
+
 })
