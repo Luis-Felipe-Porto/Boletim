@@ -8,10 +8,13 @@ class AlunoControler{
         
     }
     adicionaAluno(aluno){
+        //console.log(erros);
         const erros = this._validacao(aluno);
+        
         if(erros.length<=0){
             aluno.situacao = this.situacao(aluno);
             this._boletim.adicionaAluno(aluno)
+            this._mensagemView.update(erros)
            // console.log(this._calcularMediaGeralTurma());
         }else{
             this._mensagemView.update(erros); 
@@ -74,10 +77,12 @@ class AlunoControler{
         return erros;
     }
     limpaFormulario(){
+        this._campos.nome.value = '';
         this._campos.nota1.value = '';
         this._campos.nota2.value = '';
         this._campos.frequencia.value = '';
         this._campos.provafinal.value = '';
+       // this._mensagemView.update([]);
     }
 
 }

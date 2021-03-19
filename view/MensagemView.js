@@ -5,9 +5,11 @@ class MensagemView{
     }
     _template(erros){
         return `
-            <span>
-                ${erros.map((erro)=>erro).join('</br>')}
-            </span>
+            <div class="row justify-content-center" >
+                <div class="col-6 ${erros.length>0?'alert alert-warning':''}" role="alert">
+                    ${erros.map((erro)=>erro).join('</br>')}
+                </div>
+            </div>
         `;
     }
     update(erros){

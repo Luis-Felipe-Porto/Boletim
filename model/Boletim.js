@@ -31,6 +31,6 @@ class Boletim{
         this._alunos.forEach(aluno=>{
             somamediaGeral+= aluno.media;
         })
-        return  (somamediaGeral/this._alunos.length);
+        return  (somamediaGeral/this._alunos.length)?(somamediaGeral/this._alunos.length):0;
     }
 }

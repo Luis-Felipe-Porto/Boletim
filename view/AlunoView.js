@@ -4,7 +4,7 @@ class AlunoView{
         this._elemento= elemento;
     }
     _template(boletim){
-        return `<table >
+        return `<table class="table table-striped table-hover">
         <thead>
             <th>Nome</th>
             <th>Nota 1</th>
@@ -24,7 +24,7 @@ class AlunoView{
                     <td>${aluno.frequencia+' %'}</td>
                     <td>${aluno.provafinal == null?'--':aluno.provafinal}</td>
                     <td>${aluno.media}</td>
-                    <td>${aluno.situacao}</td>
+                    <td class="${aluno.situacao == 'APROVADO'?'table-success':'table-danger'}">${aluno.situacao}</td>
                    
                 </tr>
             `
@@ -38,7 +38,7 @@ class AlunoView{
                 <td>${boletim.numeroAprovados()}</td>
                 <td>Reprovados</td>
                 <td>${boletim.numeroReprovados()}</td>
-                <td>Media Geral</td>
+                <td colspan="2">Media Geral</td>
                 <td>${boletim.calcularMediaGeralTurma().toFixed(2)}</td>
             </tr> 
         </tfooter>

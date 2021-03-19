@@ -1,0 +1,36 @@
+
+body{
+    background: #dddddd;
+}
+.form-data{
+    
+    height: 250px;
+    background: #444444;
+    margin: auto;
+    color: #dddddd;
+}
+.aluno-view{
+    height: 100vh;
+    width: 70%;
+    background: #ffff;
+    margin: -50px auto auto auto;
+    border-radius: 6px;
+}
+.formulario{
+    width: 70%;
+    margin: auto;
+   
+}
+.mensagem{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background: #444444;
+}
+.logo img{
+    width: 10%;
+}
+.logo{
+    margin: auto;
+    border-bottom: 1px solid #838080;
+}
