@@ -22,7 +22,7 @@ class AlunoControler{
         this.limpaFormulario();
         
         if( aluno.situacao == 'PROVA FINAL'){
-            aluno.situacao = calcularNotaFinal(aluno)
+            aluno.situacao = this.calcularNotaFinal(aluno)
         }
         this._alunoView.update(this._boletim);    
     }
@@ -49,7 +49,7 @@ class AlunoControler{
         return aluno.media;
     }
     calcularNotaFinal(aluno){
-       return _calcularMedia(aluno) + _calcularMediaFinal(aluno) < 50 ? 'REPROVADO': 'APROVADO'
+       return this._calcularMedia(aluno) + this._calcularMediaFinal(aluno) < 50 ? 'REPROVADO': 'APROVADO'
     }
     _validacao(aluno){
         let erros =[];

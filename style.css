@@ -3,23 +3,20 @@ body{
     background: #dddddd;
 }
 .form-data{
-    
-    height: 250px;
     background: #444444;
-    margin: auto;
+    /* margin: auto; */
     color: #dddddd;
 }
 .aluno-view{
     height: 100vh;
-    width: 70%;
     background: #ffff;
     margin: -50px auto auto auto;
     border-radius: 6px;
 }
 .formulario{
-    width: 70%;
     margin: auto;
-   
+   max-width: 1000px;
+   margin-bottom: 80px;
 }
 .mensagem{
     width: 100%;
@@ -28,7 +25,7 @@ body{
     background: #444444;
 }
 .logo img{
-    width: 10%;
+    width: 5rem;
 }
 .logo{
     margin: auto;

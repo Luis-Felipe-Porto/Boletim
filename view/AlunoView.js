@@ -7,8 +7,8 @@ class AlunoView{
         return `<table class="table table-striped table-hover">
         <thead>
             <th>Nome</th>
-            <th>Nota 1</th>
-            <th>Nota 2</th>
+            <th>Nota1</th>
+            <th>Nota2</th>
             <th>Frequência</th>
             <th>Final</th>
             <th>Media</th>
